@@ -24,7 +24,7 @@ public class Main {
                 .email("edgardo@gmail.com")
                 .telefono("48873074")
                 .build();
-
+        //a
         log.debug("The persona after: ${}", persona);
 
         // Save persona into database

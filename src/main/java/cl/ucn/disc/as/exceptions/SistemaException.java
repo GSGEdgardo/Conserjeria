@@ -1,25 +1,19 @@
 package cl.ucn.disc.as.exceptions;
 
-import javax.persistence.PersistenceException;
+import io.ebean.PersistenceIOException;
 
 /**
- * The sistema exception class
- * @Author Edgardo Ortiz Gonzalez
+ * The sistema exception
+ *
+ * @author Edgardo Ortiz Gonzalez
  */
-
 public class SistemaException extends RuntimeException {
-
     /**
-     *Creates an exception
-     *@param message message to log
-     *@param ex persistence exception associated
+     *
+     * @param message the reason
+     * @param ex the error
      */
-
-    public SistemaException(String message, PersistenceException ex) {
-        super(message, ex);
-    }
-
-    public SistemaException(String message){
-        super(message);
+    public SistemaException(String message, PersistenceIOException ex) {
+        super(message,ex);
     }
 }

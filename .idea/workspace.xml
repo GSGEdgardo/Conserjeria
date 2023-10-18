@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc94b167-8896-42a8-8812-5615c71c81e5" name="Changes" comment="Excepciones creadas">
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/dao/PersonaFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/exceptions/IllegalDomainException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/exception/IllegalDomainException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/exceptions/SistemaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/exceptions/SistemaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Contrato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Contrato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Departamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Edificio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Pago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Pago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/model/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/services/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/services/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/services/SistemaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/services/SistemaImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/utils/ValidationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/ucn/disc/as/utils/ValidationUtils.java" afterDir="false" />
-    </list>
+    <list default="true" id="dc94b167-8896-42a8-8812-5615c71c81e5" name="Changes" comment="Sistema y Excepcion al sistema" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +108,7 @@
       <workItem from="1697586251459" duration="993000" />
       <workItem from="1697587261876" duration="251000" />
       <workItem from="1697587561684" duration="1748000" />
-      <workItem from="1697589385946" duration="998000" />
+      <workItem from="1697589385946" duration="1313000" />
     </task>
     <task id="LOCAL-00001" summary="Base creada, puml incluido.">
       <option name="closed" value="true" />
@@ -155,7 +134,31 @@
       <option name="project" value="LOCAL" />
       <updated>1697587250438</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Excepciones listas">
+      <option name="closed" value="true" />
+      <created>1697590636152</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697590636153</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modelos listos">
+      <option name="closed" value="true" />
+      <created>1697590658705</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697590658705</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Sistema y Excepcion al sistema">
+      <option name="closed" value="true" />
+      <created>1697590682404</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697590682404</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +168,9 @@
     <MESSAGE value="Base creada, puml incluido." />
     <MESSAGE value="Archivos del modelo puml creados" />
     <MESSAGE value="Excepciones creadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Excepciones creadas" />
+    <MESSAGE value="Excepciones listas" />
+    <MESSAGE value="Modelos listos" />
+    <MESSAGE value="Sistema y Excepcion al sistema" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistema y Excepcion al sistema" />
   </component>
 </project>

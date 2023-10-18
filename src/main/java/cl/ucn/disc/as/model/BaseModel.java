@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Arquitectura de Sistemas, DISC, UCN.
- */
-
 package cl.ucn.disc.as.model;
 
 import io.ebean.annotation.WhenCreated;

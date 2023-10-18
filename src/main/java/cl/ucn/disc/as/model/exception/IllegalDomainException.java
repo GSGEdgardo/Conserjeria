@@ -1,4 +1,4 @@
-package cl.ucn.disc.as.exceptions;
+package cl.ucn.disc.as.model.exception;
 
 /**
  * The domain violation exception class

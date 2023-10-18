@@ -1,0 +1,67 @@
+plugins {
+    id("java")
+    id("idea")
+    id("io.ebean") version "13.23.0"
+}
+
+group = "cl.ucn.disc.as"
+version = "0.0.1"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+java{
+    toolchain{
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+
+dependencies {
+    implementation("org.projectlombok:lombok:1.18.28")
+    testImplementation(platform("org.junit:junit-bom:5.9.1"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+
+    // junit
+
+    testImplementation("org.junit.jupiter:junit-jupiter")
+
+    // lombok
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.28")
+
+    // ebean
+    testImplementation("io.ebean:ebean-test:13.23.0")
+
+    // ebean
+    implementation ("io.ebean:ebean:13.23.0")
+    implementation ("io.ebean:ebean-ddl-generator:13.23.0")
+    annotationProcessor ("io.ebean:querybean-generator:13.23.0")
+
+    // database
+    implementation ("org.xerial:sqlite-jdbc:3.43.2.0")
+    // implementation 'com.h2database:h2:2.2.220'
+
+    // json
+    implementation ("com.google.code.gson:gson:2.10.1")
+
+    // web: javalin
+    implementation ("io.javalin:javalin:5.6.3")
+
+    // lombok
+    compileOnly ("org.projectlombok:lombok:1.18.30")
+    annotationProcessor ("org.projectlombok:lombok:1.18.30")
+
+    // logger
+    implementation ("ch.qos.logback:logback-core:1.4.11")
+    implementation ("ch.qos.logback:logback-classic:1.4.11")
+
+    // data faker
+    implementation ("com.github.javafaker:javafaker:1.0.2")
+
+}
+
+tasks.test {
+    useJUnitPlatform()
+}

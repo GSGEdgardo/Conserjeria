@@ -6,7 +6,9 @@ package cl.ucn.disc.as.dao;
 
 import cl.ucn.disc.as.model.Persona;
 import io.ebean.Finder;
+import io.ebean.annotation.NotNull;
 
+import java.util.Optional;
 /**
  * The Finder of Persona.
  *
@@ -21,14 +23,14 @@ public class PersonaFinder extends Finder<Long, Persona> {
     public PersonaFinder() {
         super(Persona.class);
     }
-}
+
     /**
      * Find a Persona by rut.
      *
      * @param rut to use.
      * @return the Persona.
-
-    public Optional<Persona> byRut(@NotNull Integer rut) {
+     */
+    public Optional<Persona> byRut(String rut) {
         return new QPersona().rut.eq(rut).findOneOrEmpty();
     }
-} */
+}

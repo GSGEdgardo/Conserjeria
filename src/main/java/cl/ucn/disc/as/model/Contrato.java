@@ -1,40 +1,40 @@
 package cl.ucn.disc.as.model;
 
 import io.ebean.annotation.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import java.time.Instant;
 import java.util.List;
 
-@ToString(callSuper = true)
+/**
+ * The Contrato class.
+ */
+@ToString
 @AllArgsConstructor
 @Builder
 @Entity
 @Getter
+@Setter
 public class Contrato extends BaseModel {
 
     @NotNull
     private Instant fechaPago;
 
-    // Relación con Persona
-    @ManyToOne
+    // Persona asociada al contrato
     @NotNull
     private Persona persona;
 
-    // Relación con Departamento
-    @ManyToOne
+    // Departamento asociado al contrato
     @NotNull
     private Departamento departamento;
 
-    // Relación con Pago
-    @OneToMany(cascade = CascadeType.ALL)
+    // Lista de pagos asociados al contrato
     private List<Pago> pagos;
 
+    public Contrato(Persona persona, Departamento departamento, Instant fechaPago) {
+        this.persona = persona;
+        this.departamento = departamento;
+        this.fechaPago = fechaPago;
+    }
 }

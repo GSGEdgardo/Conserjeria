@@ -1,13 +1,6 @@
-/*
- * Copyright (c) 2023. Arquitectura de Sistemas, DISC, UCN.
- */
-
 package cl.ucn.disc.as.model;
 
-import cl.ucn.disc.as.model.exception.IllegalDomainException;
-import cl.ucn.disc.as.utils.ValidationUtils;
 import io.ebean.annotation.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -15,75 +8,74 @@ import lombok.ToString;
 import javax.persistence.Entity;
 
 /**
- * The Persona class.
- *
- * @author Diego Urrutia-Astorga.
+ * Persona Class
  */
 @Getter
-@ToString(callSuper = true)
-@AllArgsConstructor
+@ToString
 @Builder
 @Entity
 public class Persona extends BaseModel {
 
-    /**
-     * The RUT.
-     */
     @NotNull
     private String rut;
 
-    /**
-     * The Nombre.
-     */
     @NotNull
     private String nombre;
 
-    /**
-     * The Apellidos.
-     */
     @NotNull
     private String apellidos;
 
-    /**
-     * The Email.
-     */
     @NotNull
     private String email;
 
-    /**
-     * The Telefono.
-     */
     @NotNull
     private String telefono;
 
-    /**
-     * Custom builder for validations.
-     */
-    public static class PersonaBuilder{
+    public Persona(String rut, String nombre, String apellidos, String email, String telefono) {
+        this.rut = rut;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.telefono = telefono;
+    }
 
-        /**
-         *
-         * @return the Persona.
-         */
-        public Persona build(){
+    public String getRut() {
+        return rut;
+    }
 
-            // validate the rut
-            if (!ValidationUtils.isRutValid(this.rut)){
-                throw new IllegalDomainException("RUT not valid: " + this.rut);
-            }
+    public String getNombre() {
+        return nombre;
+    }
 
-            // validate the email
-            if (!ValidationUtils.isEmailValid(this.email)){
-                throw new IllegalDomainException("Email not valid: " + this.email);
-            }
+    public String getApellidos() {
+        return apellidos;
+    }
 
-            // TODO: validate other fields
+    public String getEmail() {
+        return email;
+    }
 
-            return new Persona(this.rut,
-                    this.nombre,
-                    this.apellidos,
-                    this.email,
-                    this.telefono);
-        }
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setRut(String rut) {
+        this.rut = rut;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }

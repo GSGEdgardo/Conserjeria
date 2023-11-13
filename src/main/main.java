@@ -12,25 +12,19 @@ import cl.ucn.disc.as.model.Persona;
 @Slf4j
 public class Main {
     public static void main(String[] args) {
-        log.debug("Starting main");
 
-        //Get database
-        Database db = DB.getDefault();
-        Persona persona = Persona.builder()
+        log.debug("Iniciando el sistema...");
 
-                .rut(204168539)
-                .nombre("Edgardo")
-                .apellidos("Ortiz")
-                .email("edgardo@gmail.com")
-                .telefono("48873074")
-                .build();
-        //a
-        log.debug("The persona after: ${}", persona);
+        log.debug("Library path : {}", System.getProperty("java.library.path"));
 
-        // Save persona into database
-        db.save(persona);
-        log.debug("The persona before: ${}", persona);
-        log.debug("Done.");
+        //Start the API Rest Server
+        Javalin app = ApiRestServer.start(7070,new WebController());
+
+        log.debug("Sistema deteniendose...");
+
+        app.stop();
+
+        log.debug("Sistema finalizado...");
     }
 
 }

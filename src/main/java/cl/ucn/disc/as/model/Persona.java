@@ -1,5 +1,6 @@
 package cl.ucn.disc.as.model;
 
+import io.ebean.annotation.Cache;
 import io.ebean.annotation.NotNull;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,8 +11,10 @@ import javax.persistence.Entity;
 /**
  * Persona Class
  */
+@Cache(enableQueryCache = true, nearCache = true)
 @Getter
-@ToString
+@ToString(callSuper = true)
+@AllArgsConstructor
 @Builder
 @Entity
 public class Persona extends BaseModel {

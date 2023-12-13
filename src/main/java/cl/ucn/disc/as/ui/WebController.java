@@ -33,7 +33,7 @@ public final class WebController  implements RoutesConfigurator {
         });
 
         app.get("/grpc/personas/rut/{rut}", ctx -> {
-            String rut = ctx.pathParam("20416853-9");
+            String rut = ctx.pathParam("204168539");
 
             ManagedChannel channel = ManagedChannelBuilder
                     .forAddress("localhost", 50123)

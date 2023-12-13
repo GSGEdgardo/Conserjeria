@@ -18,7 +18,6 @@ import java.time.Instant;
 @Slf4j
 public final class ApiRestServer {
     private ApiRestServer() {
-        //nothing
     }
 
     /**

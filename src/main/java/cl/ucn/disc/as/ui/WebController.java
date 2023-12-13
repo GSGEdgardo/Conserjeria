@@ -28,6 +28,10 @@ public final class WebController  implements RoutesConfigurator {
         /*
         Default route or home
          */
+        app.get("/", ctx -> {
+            ctx.result("Welcome to Conserjeria API REST");
+        });
+
         app.get("/grpc/personas/rut/{rut}", ctx -> {
             String rut = ctx.pathParam("rut");
 
@@ -55,4 +59,5 @@ public final class WebController  implements RoutesConfigurator {
                     .build());
             ctx.json(oPersona.orElseThrow(() -> new NotFoundResponse("Can't find Persona with rut: " + rut)));
         });
+}
 }

@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 @Cache(enableQueryCache = true, nearCache = true)
 @Getter
 @ToString(callSuper = true)
-@AllArgsConstructor
+//@AllArgsConstructor
 @Builder
 @Entity
 public class Persona extends BaseModel {

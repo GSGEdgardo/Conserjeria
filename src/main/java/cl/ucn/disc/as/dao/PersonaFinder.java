@@ -6,7 +6,6 @@ package cl.ucn.disc.as.dao;
 
 import cl.ucn.disc.as.model.Persona;
 import io.ebean.Finder;
-import io.ebean.annotation.NotNull;
 
 import java.util.Optional;
 /**
@@ -31,6 +30,6 @@ public class PersonaFinder extends Finder<Long, Persona> {
      * @return the Persona.
      */
     public Optional<Persona> byRut(String rut) {
-        return new QPersona().rut.eq(rut).findOneOrEmpty();
+        return null;//new QPersona().rut.eq(rut).findOneOrEmpty();
     }
 }

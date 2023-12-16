@@ -15,20 +15,7 @@ public final class main {
 
     public static void main(String[] args) throws InterruptedException, IOException {
 
-        //var app = Javalin.create(/*config*/)
-        //.get("/", ctx -> ctx.result("Hello World"))
-        //.get("personas", ctx -> ctx.json((sistema.getPersonas())))
-        //.start(7070);
-
-        /*log.debug("Starting Main ..");
-
-
-        //Start the API Rest server
-        Javalin app = ApiRestServer.start(7070, new WebController());
-
-        log.debug("Done. :)");
-        */
-
+        log.debug("Starting Main ..");
 
         log.debug("Starting Main with library path: {}", System.getProperty("java.library.path"));
 

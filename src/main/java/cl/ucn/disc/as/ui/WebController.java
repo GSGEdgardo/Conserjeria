@@ -20,6 +20,7 @@ public final class WebController  implements RoutesConfigurator {
 
     public WebController(){
         this.sistema = new SistemaImpl(DB.getDefault());
+        this.sistema.populate();
     }
 
     @Override
@@ -32,8 +33,18 @@ public final class WebController  implements RoutesConfigurator {
             ctx.result("Welcome to Conserjeria API REST");
         });
 
-        app.get("/grpc/personas/rut/{rut}", ctx -> {
-            String rut = ctx.pathParam("204168539");
+        app.get("/api/personas", ctx -> {
+            ctx.json(sistema.getPersonas());
+        });
+
+        app.get("/api/personas/rut/{rut}", ctx -> {
+            String rut = ctx.pathParam("rut");
+            Optional<Persona> oPersona = sistema.getPersona(rut);
+            ctx.json(oPersona.orElseThrow(() -> new NotFoundResponse("Can't find Persona with rut: " + rut)));
+        });
+
+        app.get("/api/grpc/personas/rut/{rut}", ctx -> {
+            String rut = ctx.pathParam("rut");
 
             ManagedChannel channel = ManagedChannelBuilder
                     .forAddress("localhost", 50123)

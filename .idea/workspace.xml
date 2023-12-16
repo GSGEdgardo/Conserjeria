@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc94b167-8896-42a8-8812-5615c71c81e5" name="Changes" comment="Fixed: se arreglaron errores relacionados a la ejecución del proyecto">
+    <list default="true" id="dc94b167-8896-42a8-8812-5615c71c81e5" name="Changes" comment="feat: conexión con mariaDB realizada">
+      <change afterPath="$PROJECT_DIR$/docker-compose-mariadb.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
@@ -107,20 +109,7 @@
       <recent name="C:\Users\edgar\Downloads\OrtizE_Conserjeria\src\main\java\cl\ucn\disc\as" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cl.ucn.disc.as.Main" />
-      <module name="OrtizE_Conserjeria.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cl.ucn.disc.as.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.docker-compose-mariadb.yml: Compose Deployment">
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cl.ucn.disc.as.main" />
       <module name="OrtizE_Conserjeria.main" />
@@ -154,10 +143,88 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="conserjeria" />
+          <option name="containerName" value="mycontainer" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="MariaDB" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="mariadb:latest" />
+          <option name="containerName" value="MariaDBContainer" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_DATABASE" />
+                <option name="value" value="conserjeria" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_PASSWORD" />
+                <option name="value" value="digimon_01" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_USER" />
+                <option name="value" value="root" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_ROOT_PASSWORD" />
+                <option name="value" value="digimon_01" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="3306" />
+                <option name="hostPort" value="3306" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose-mariadb.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose-mariadb.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose-mariadb.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.MariaDB" />
         <item itemvalue="Application.main" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +250,7 @@
       <workItem from="1702483891054" duration="3996000" />
       <workItem from="1702686860266" duration="841000" />
       <workItem from="1702687718318" duration="465000" />
-      <workItem from="1702688289008" duration="1050000" />
+      <workItem from="1702688289008" duration="6899000" />
     </task>
     <task id="LOCAL-00001" summary="Base creada, puml incluido.">
       <option name="closed" value="true" />
@@ -297,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702688447711</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: conexión con mariaDB realizada">
+      <option name="closed" value="true" />
+      <created>1702689448312</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702689448312</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +412,8 @@
     <MESSAGE value="Implementación de ui" />
     <MESSAGE value="grpc" />
     <MESSAGE value="Fixed: se arreglaron errores relacionados a la ejecución del proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed: se arreglaron errores relacionados a la ejecución del proyecto" />
+    <MESSAGE value="feat: conexión con mariaDB realizada" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: conexión con mariaDB realizada" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

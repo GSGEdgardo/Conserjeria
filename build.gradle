@@ -15,6 +15,7 @@ buildscript {
 
         protobufPluginVersion = '0.9.4'
         versionPluginVersion = '0.50.0'
+
     }
 }
 
@@ -47,7 +48,7 @@ protobuf {
         }
     }
     generateProtoTasks {
-        all()*.plugins {
+        all()*.plugins{
             grpc {}
         }
     }
@@ -60,6 +61,7 @@ java {
 }
 
 compileJava {
+    options.release = 17
     options.encoding = 'UTF-8'
 }
 
@@ -81,7 +83,8 @@ dependencies {
     annotationProcessor "io.ebean:querybean-generator:${ebeanVersion}"
 
     // database
-    implementation "org.xerial:sqlite-jdbc:${sqliteVersion}"
+    //implementation "org.xerial:sqlite-jdbc:${sqliteVersion}"
+    implementation "org.mariadb.jdbc:mariadb-java-client:3.3.0"
     // implementation 'com.h2database:h2:2.2.220'
 
     // json
@@ -89,8 +92,8 @@ dependencies {
 
     // web: javalin
     implementation "io.javalin:javalin:${javalinVersion}"
-    implementation "com.aayushatharva.brotli4j:brotli4j:1.13.0"
-    implementation "com.nixxcode.jvmbrotli:jvmbrotli:0.2.0"
+    //implementation "com.aayushatharva.brotli4j:brorli4j:1.13.0"
+    //implementation "com.nixxcode.jvmbrotli:jvmbrotli:0.2.0"
 
     // lombok
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
@@ -100,17 +103,18 @@ dependencies {
     implementation "ch.qos.logback:logback-core:${logbackVersion}"
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
 
-    // commons-lang3
+    //commons-long3
+    //https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
 
-    // data faker
+    //data faker
     implementation "com.github.javafaker:javafaker:${javaFakerVersion}"
 
-    // gRPC
+    //grpc
     runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
     implementation "io.grpc:grpc-protobuf:${grpcVersion}"
     implementation "io.grpc:grpc-stub:${grpcVersion}"
-    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    implementation "javax.annotation:javax.annotation-api:1.3.2"
 
 }
 
@@ -124,7 +128,6 @@ test {
     testLogging.exceptionFormat = 'full'
 }
 
-// Inform IntelliJ  about the generated code.
 idea {
     module {
         sourceDirs += file("src/generated/main/java")

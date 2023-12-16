@@ -64,11 +64,21 @@ ver las dos imágenes corriendo.
 
 ## Puertos y Endpoints
 
-### API REST
+### API REST y gRPC
 
-- **Puerto:** 7070
+- **Puerto:** 7070 (SQLite)
+- **Puerto:** 7071 (MariaDB)
 
-#### Endpoints
+### Docker
+
+#### Contenedores
+
+Al terminar la ejecución de la aplicación con Docker, se deberían haber creado 3 contenedores:
+
+1. **conserjeria-web**: Contenedor de la aplicación con la base de datos SQLite.
+2. **conserjeria-conserjeria**: Contenedor de la aplicación con la base de datos MariaDB.
+3. **mariadb:10.5**: Contenedor con la imagen de MariaDB.
+#### Endpoints de prueba (SQLite):
 
 1. **Home:**
   - Método: `GET`
@@ -85,22 +95,30 @@ ver las dos imágenes corriendo.
   - URL: [http://localhost:7070/api/personas/rut/{rut}](http://localhost:7070/api/personas/rut/{rut})
   - Descripción: Obtiene los detalles de una persona específica por su Rut.
 
-### Docker
 
-#### Contenedores
-
-Al terminar la ejecución de la aplicación con Docker, se deberían haber creado 3 contenedores:
-
-1. **conserjeria-web**: Contenedor de la aplicación con la base de datos SQLite.
-2. **conserjeria-conserjeria**: Contenedor de la aplicación con la base de datos MariaDB.
-3. **mariadb:10.5**: Contenedor con la imagen de MariaDB.
-
-#### Puertos
+#### Puertos MariaDB
 
 - **Aplicación con Docker:**
   - Puerto en el Host: 7071
   - Puerto en el Contenedor: 7070
   - Descripción: Este puerto se utiliza para acceder a la aplicación cuando se ejecuta dentro del contenedor Docker. Puede ser diferente del puerto de la aplicación en el host para evitar conflictos.
+
+#### **Endpoints de prueba MariaDB:**
+1. **Home:**
+- Método: `GET`
+- URL: [http://localhost:7071/](http://localhost:7071/)
+- Descripción: Página de inicio de la API REST.
+
+2. **Listado de Personas:**
+- Método: `GET`
+- URL: [http://localhost:7071/api/personas](http://localhost:7071/api/personas)
+- Descripción: Obtiene la lista de personas.
+
+3. **Detalle de Persona por Rut:**
+- Método: `GET`
+- URL: [http://localhost:7071/api/personas/rut/{rut}](http://localhost:7071/api/personas/rut/{rut})
+- Descripción: Obtiene los detalles de una persona específica por su Rut.
+
 ### gRPC
 
 - **Puerto:** 50123
@@ -109,7 +127,8 @@ Al terminar la ejecución de la aplicación con Docker, se deberían haber cread
 
 1. **Detalle de Persona por Rut (gRPC):**
   - Método: `GET`
-  - URL: [http://localhost:7070/api/grpc/personas/rut/{rut}](http://localhost:7070/api/grpc/personas/rut/{rut})
+  - URL SQLite: [http://localhost:7070/api/grpc/personas/rut/{rut}](http://localhost:7070/api/grpc/personas/rut/{rut})
+  - URL MariaDB: [http://localhost:7071/api/grpc/personas/rut/{rut}](http://localhost:7071/api/grpc/personas/rut/{rut})
   - Descripción: Obtiene los detalles de una persona específica por su Rut mediante gRPC.
 
 
